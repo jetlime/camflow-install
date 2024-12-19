@@ -11,6 +11,7 @@ prepare_provenance:
 	mkdir -p build
 	@echo "Downloading provenance library v${lib-version} ..."
 	cd ./build && git clone https://github.com/camflow/libprovenance.git
+	cd ./build/libprovenance && git checkout tags/v${lib-version}
 	cd ./build/libprovenance && git submodule update --init --recursive
 	cd ./build/libprovenance && $(MAKE) prepare
 
@@ -39,7 +40,6 @@ prepare_lsm:
 	mkdir -p build
 	@echo "Downloading LSM patches..."
 	cd ./build && git clone https://github.com/jetlime/camflow-patches.git
-	cd ./build/camflow-patches && git checkout tags/v${lsm-version}
 	cd ./build/camflow-patches && $(MAKE) prepare
 
 config:
