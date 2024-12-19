@@ -85,7 +85,7 @@ install_service:
 	cd ./build/camflowd && $(MAKE) install
 
 clean:
-	sudo rm -rf ~/build/linux-stable
+	sudo rm -rf ~/build
 	sudo rm -rf ./build
 
 rpm:
